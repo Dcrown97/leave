@@ -91,8 +91,11 @@
                                                                     <td>
                                                                         <div class="profile-userbuttons">
                                                                             <a href="/leave_request/{{ base64_encode($staff->id) }}"
-                                                                                class="btn btn-circle deepPink-bgcolor btn-sm">Request
+                                                                                class="btn btn-circle btn-sm">Request
                                                                                 Leave</a>
+                                                                            <a onclick="return confirm('Are you sure ?')"
+                                                                                href="/delete/{{ base64_encode($staff->id) }}"
+                                                                                class="btn btn-circle deepPink-bgcolor btn-sm">Delete</a>
                                                                         </div>
                                                                     </td>
                                                                 </tr>

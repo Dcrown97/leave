@@ -424,4 +424,17 @@ class LeavereportController extends Controller
         // dd($staffs_about_to_resume);
         return view('staffsAboutToResume', compact('staffs_about_to_resume'));
     }
+
+    // Delete Staff
+    public function delete_staff($id)
+    {
+        $staff = Staff::find(base64_decode($id));
+        // dd($staff);
+        $deleted = $staff->delete();
+        if ($deleted) {
+            return redirect()->back()->with('success', 'Staff deleted successfully');
+        } else {
+            return redirect()->back()->with('error', 'Failed to delete Staff');
+        }
+    }
 }

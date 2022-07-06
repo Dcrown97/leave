@@ -37,3 +37,6 @@ Route::get('search_staffs', [LeavereportController::class, 'searchStaffs'])->nam
 
 Route::get('search_staffs_on_leave', [LeavereportController::class, 'searchStaffsOnLeave'])->name('search_staffs_on_leave');
 
+Route::match(['get', 'post'], '/delete/{id}', [LeavereportController::class, 'delete_staff'])->name('delete');
+
+
